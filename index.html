@@ -428,13 +428,17 @@
                         ]))
                     },
                     political: {
-                        code: "lepos1", name: "Political Science (Contemporary World & Politics in India)", icon: "🏛️",
-                        chapters: createChapters("lepos1", [
-                            "The Cold War Era", "The End of Bipolarity", "US Hegemony in World Politics", "Alternative Centres of Power",
-                            "Contemporary South Asia", "International Organisations", "Security in the Contemporary World", "Environment and Natural Resources",
-                            "Globalisation", "Challenges of Nation Building", "Era of One-Party Dominance", "Politics of Planned Development",
-                            "India's External Relations", "Challenges to and Restoration of the Congress System", "Crisis of Democratic Order", "Rise of Popular Movements", "Regional Aspirations", "Recent Developments in Indian Politics"
-                        ])
+                        code: "leps1", name: "Political Science (Contemporary World & Politics in India)", icon: "🏛️",
+                        chapters: createChapters("leps1", [
+                            "The Cold War Era", "The End of Bipolarity", "US Hegemony in World Politics", 
+                            "Alternative Centres of Power", "Contemporary South Asia", "International Organisations", 
+                            "Security in the Contemporary World", "Environment and Natural Resources", "Globalisation"
+                        ]).concat(createChapters("leps2", [
+                            "Challenges of Nation Building", "Era of One-Party Dominance", "Politics of Planned Development", 
+                            "India's External Relations", "Challenges to and Restoration of the Congress System", 
+                            "Crisis of Democratic Order", "Rise of Popular Movements", "Regional Aspirations", 
+                            "Recent Developments in Indian Politics"
+                        ]))
                     },
                     history: {
                         code: "lehi1", name: "History (Themes in Indian History)", icon: "🏺",
