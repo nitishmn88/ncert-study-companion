@@ -353,13 +353,15 @@
                             "Dual Nature of Radiation and Matter", "Atoms", "Nuclei", "Semiconductor Electronics"
                         ]))
                     },
-                    chemistry: {
+                    cchemistry: {
                         code: "lech1", name: "Chemistry Part 1 & 2", icon: "🧪",
                         chapters: createChapters("lech1", [
-                            "Solutions", "Electrochemistry", "Chemical Kinetics", "The d- and f-Block Elements", "Coordination Compounds",
-                            "Haloalkanes and Haloarenes", "Alcohols, Phenols and Ethers", "Aldehydes, Ketones and Carboxylic Acids",
-                            "Amines", "Biomolecules"
-                        ])
+                            "Solutions", "Electrochemistry", "Chemical Kinetics", 
+                            "The d- and f-Block Elements", "Coordination Compounds"
+                        ]).concat(createChapters("lech2", [
+                            "Haloalkanes and Haloarenes", "Alcohols, Phenols and Ethers", 
+                            "Aldehydes, Ketones and Carboxylic Acids", "Amines", "Biomolecules"
+                        ]))
                     },
                     biology: {
                         code: "lebo1", name: "Biology", icon: "🧬",
