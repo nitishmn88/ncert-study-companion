@@ -388,14 +388,21 @@
                             "जूझ", "अतीत में दबा दाब", "डायरी के पन्ने"
                         ]))
                     },
-                    accountancy: {
+                    aaccountancy: {
                         code: "leac1", name: "Accountancy Part 1 & 2", icon: "📊",
                         chapters: createChapters("leac1", [
-                            "Accounting for Partnership Firms - Basic Concepts", "Reconstitution of a Partnership Firm - Admission of a Partner",
-                            "Reconstitution of a Partnership Firm - Retirement/Death of a Partner", "Dissolution of Partnership Firm",
-                            "Accounting for Share Capital", "Issue of Debentures", "Financial Statements of a Company", "Analysis of Financial Statements",
-                            "Accounting Ratios", "Cash Flow Statement"
-                        ])
+                            "Accounting for Partnership Firms - Basic Concepts", 
+                            "Reconstitution of a Partnership Firm - Admission of a Partner", 
+                            "Reconstitution of a Partnership Firm - Retirement/Death of a Partner", 
+                            "Dissolution of Partnership Firm"
+                        ]).concat(createChapters("leac2", [
+                            "Accounting for Share Capital", 
+                            "Issue of Debentures", 
+                            "Financial Statements of a Company", 
+                            "Analysis of Financial Statements", 
+                            "Accounting Ratios", 
+                            "Cash Flow Statement"
+                        ]))
                     },
                     business: {
                         code: "lebs1", name: "Business Studies Part 1 & 2", icon: "💼",
