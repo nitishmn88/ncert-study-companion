@@ -178,11 +178,26 @@
                     },
                     physics: {
                         code: "keph1", name: "Physics Part 1 & 2", icon: "⚡",
-                        chapters: createChapters("keph1", [
-                            "Units and Measurement", "Motion in a Straight Line", "Motion in a Plane", "Laws of Motion",
-                            "Work, Energy and Power", "System of Particles and Rotational Motion", "Gravitation", "Mechanical Properties of Solids",
-                            "Mechanical Properties of Fluids", "Thermal Properties of Matter", "Thermodynamics", "Kinetic Theory", "Oscillations", "Waves"
-                        ])
+                        chapters: [
+                            ...createChapters("keph1", [
+                                "Units and Measurement", 
+                                "Motion in a Straight Line", 
+                                "Motion in a Plane", 
+                                "Laws of Motion", 
+                                "Work, Energy and Power", 
+                                "System of Particles and Rotational Motion", 
+                                "Gravitation"
+                            ]),
+                            ...createChapters("keph2", [
+                                "Mechanical Properties of Solids", 
+                                "Mechanical Properties of Fluids", 
+                                "Thermal Properties of Matter", 
+                                "Thermodynamics", 
+                                "Kinetic Theory", 
+                                "Oscillations", 
+                                "Waves"
+                            ])
+                        ]
                     },
                     chemistry: {
                         code: "kech1", name: "Chemistry Part 1 & 2", icon: "🧪",
