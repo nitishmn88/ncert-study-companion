@@ -337,9 +337,11 @@
                         code: "lemh1", name: "Mathematics Part 1 & 2", icon: "📐",
                         chapters: createChapters("lemh1", [
                             "Relations and Functions", "Inverse Trigonometric Functions", "Matrices", "Determinants",
-                            "Continuity and Differentiability", "Application of Derivatives", "Integrals", "Application of Integrals",
-                            "Differential Equations", "Vector Algebra", "Three Dimensional Geometry", "Linear Programming", "Probability"
-                        ])
+                            "Continuity and Differentiability", "Application of Derivatives"
+                        ]).concat(createChapters("lemh2", [
+                            "Integrals", "Application of Integrals", "Differential Equations", "Vector Algebra", 
+                            "Three Dimensional Geometry", "Linear Programming", "Probability"
+                        ]))
                     },
                     physics: {
                         code: "leph1", name: "Physics Part 1 & 2", icon: "⚡",
