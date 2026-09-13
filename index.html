@@ -186,11 +186,21 @@
                     },
                     chemistry: {
                         code: "kech1", name: "Chemistry Part 1 & 2", icon: "🧪",
-                        chapters: createChapters("kech1", [
-                            "Some Basic Concepts of Chemistry", "Structure of Atom", "Classification of Elements and Periodicity in Properties",
-                            "Chemical Bonding and Molecular Structure", "States of Matter", "Thermodynamics", "Equilibrium", "Redox Reactions",
-                            "Hydrogen", "s-Block Elements", "p-Block Elements", "Organic Chemistry: Some Basic Principles and Techniques", "Hydrocarbons", "Environmental Chemistry"
-                        ])
+                        chapters: [
+                            ...createChapters("kech1", [
+                                "Some Basic Concepts of Chemistry", 
+                                "Structure of Atom", 
+                                "Classification of Elements and Periodicity in Properties", 
+                                "Chemical Bonding and Molecular Structure", 
+                                "Thermodynamics", 
+                                "Equilibrium"
+                            ]),
+                            ...createChapters("kech2", [
+                                "Redox Reactions", 
+                                "Organic Chemistry: Some Basic Principles and Techniques", 
+                                "Hydrocarbons"
+                            ])
+                        ]
                     },
                     biology: {
                         code: "kebo1", name: "Biology", icon: "🧬",
