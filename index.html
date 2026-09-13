@@ -407,9 +407,11 @@
                     business: {
                         code: "lebs1", name: "Business Studies Part 1 & 2", icon: "💼",
                         chapters: createChapters("lebs1", [
-                            "Nature and Significance of Management", "Principles of Management", "Business Environment", "Planning", "Organising",
-                            "Staffing", "Directing", "Controlling", "Financial Management", "Financial Markets", "Marketing Management", "Consumer Protection"
-                        ])
+                            "Nature and Significance of Management", "Principles of Management", "Business Environment", 
+                            "Planning", "Organising", "Staffing", "Directing", "Controlling"
+                        ]).concat(createChapters("lebs2", [
+                            "Financial Management", "Financial Markets", "Marketing Management", "Consumer Protection"
+                        ]))
                     },
                     economics: {
                         code: "leec1", name: "Economics (Macro & Indian Economic Development)", icon: "📈",
