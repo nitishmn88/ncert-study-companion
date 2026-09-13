@@ -416,11 +416,16 @@
                     economics: {
                         code: "leec1", name: "Economics (Macro & Indian Economic Development)", icon: "📈",
                         chapters: createChapters("leec1", [
-                            "Introduction to Macroeconomics", "National Income Accounting", "Money and Banking", "Determination of Income and Employment",
-                            "Government Budget and the Economy", "Open Economy Macroeconomics", "Indian Economy on the Eve of Independence",
-                            "Indian Economy (1950-1990)", "Liberalisation, Privatisation and Globalisation: An Appraisal", "Poverty", "Human Capital Formation in India",
-                            "Rural Development", "Employment: Growth, Informalisation and Other Issues", "Environment and Sustainable Development", "Comparative Development Experiences of India and its Neighbours"
-                        ])
+                            "Introduction to Macroeconomics", "National Income Accounting", "Money and Banking", 
+                            "Determination of Income and Employment", "Government Budget and the Economy", "Open Economy Macroeconomics"
+                        ]).concat(createChapters("leec2", [
+                            "Indian Economy on the Eve of Independence", "Indian Economy (1950-1990)", 
+                            "Liberalisation, Privatisation and Globalisation: An Appraisal", "Poverty", 
+                            "Human Capital Formation in India", "Rural Development", 
+                            "Employment: Growth, Informalisation and Other Issues", 
+                            "Environment and Sustainable Development", 
+                            "Comparative Development Experiences of India and its Neighbours"
+                        ]))
                     },
                     political: {
                         code: "lepos1", name: "Political Science (Contemporary World & Politics in India)", icon: "🏛️",
