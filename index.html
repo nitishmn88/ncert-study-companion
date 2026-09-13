@@ -465,13 +465,16 @@
                         ]))
                     },
                     sociology: {
-                        code: "leso1", name: "Sociology (Indian Society & Change)", icon: "👥",
-                        chapters: createChapters("leso1", [
-                            "Introducing Indian Society", "The Demographic Structure of the Indian Society", "Social Institutions: Continuity and Change",
-                            "The Market as a Social Institution", "Social Inequality and Exclusion", "Challenges of Cultural Diversity",
-                            "Structural Change", "Cultural Change", "The Story of Indian Democracy", "Change and Development in Rural Society",
-                            "Change and Development in Industrial Society", "Globalisation and Social Change", "Mass Media and Communication", "Social Movements"
-                        ])
+                        code: "lesy1", name: "Sociology (Indian Society & Change)", icon: "👥",
+                        chapters: createChapters("lesy1", [
+                            "Introducing Indian Society", "The Demographic Structure of the Indian Society", 
+                            "Social Institutions: Continuity and Change", "The Market as a Social Institution", 
+                            "Social Inequality and Exclusion", "Challenges of Cultural Diversity"
+                        ]).concat(createChapters("lesy2", [
+                            "Structural Change", "Cultural Change", "The Story of Indian Democracy", 
+                            "Change and Development in Rural Society", "Change and Development in Industrial Society", 
+                            "Globalisation and Social Change", "Mass Media and Communication", "Social Movements"
+                        ]))
                     },
                     psychology: {
                         code: "leps1", name: "Psychology", icon: "🧠",
