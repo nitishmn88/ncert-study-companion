@@ -201,13 +201,19 @@
                             "Body Fluids and Circulation", "Excretory Products and their Elimination", "Locomotion and Movement", "Neural Control and Coordination", "Chemical Coordination and Integration"
                         ])
                     },
-                    english: {
-                        code: "kehd1", name: "English (Hornbill & Snapshots)", icon: "📖",
-                        chapters: createChapters("kehd1", [
-                            "The Portrait of a Lady", "A Photograph", "We're Not Afraid to Die... if We Can All Be Together", "Discovering Tut: the Saga Continues",
-                            "The Voice of the Rain", "Childhood", "The Adventure", "Silk Road", "Father to Son",
-                            "The Summer of the Beautiful White Horse", "The Address", "Mother's Day", "Birth", "The Tale of Melon City"
-                        ])
+                    english: english: {
+                        code: "kehb1", name: "English (Hornbill & Snapshots)", icon: "📖",
+                        chapters: [
+                            ...createChapters("kehb1", [
+                                "The Portrait of a Lady", "A Photograph", "We're Not Afraid to Die... if We Can All Be Together", 
+                                "Discovering Tut: the Saga Continues", "The Voice of the Rain", "Childhood", 
+                                "The Adventure", "Silk Road", "Father to Son"
+                            ]),
+                            ...createChapters("kesp1", [
+                                "The Summer of the Beautiful White Horse", "The Address", "Mother's Day", 
+                                "Birth", "The Tale of Melon City"
+                            ])
+                        ]
                     },
                     hindi: {
                         code: "khar1", name: "Hindi (Aroh & Vitan)", icon: "🖋️",
