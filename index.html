@@ -346,10 +346,12 @@
                     physics: {
                         code: "leph1", name: "Physics Part 1 & 2", icon: "⚡",
                         chapters: createChapters("leph1", [
-                            "Electric Charges and Fields", "Electrostatic Potential and Capacitance", "Current Electricity", "Moving Charges and Magnetism",
-                            "Magnetism and Matter", "Electromagnetic Induction", "Alternating Current", "Electromagnetic Waves",
-                            "Ray Optics and Optical Instruments", "Wave Optics", "Dual Nature of Radiation and Matter", "Atoms", "Nuclei", "Semiconductor Electronics"
-                        ])
+                            "Electric Charges and Fields", "Electrostatic Potential and Capacitance", "Current Electricity", 
+                            "Moving Charges and Magnetism", "Magnetism and Matter", "Electromagnetic Induction", "Alternating Current"
+                        ]).concat(createChapters("leph2", [
+                            "Electromagnetic Waves", "Ray Optics and Optical Instruments", "Wave Optics", 
+                            "Dual Nature of Radiation and Matter", "Atoms", "Nuclei", "Semiconductor Electronics"
+                        ]))
                     },
                     chemistry: {
                         code: "lech1", name: "Chemistry Part 1 & 2", icon: "🧪",
