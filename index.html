@@ -353,7 +353,7 @@
                             "Dual Nature of Radiation and Matter", "Atoms", "Nuclei", "Semiconductor Electronics"
                         ]))
                     },
-                    cchemistry: {
+                    chemistry: {
                         code: "lech1", name: "Chemistry Part 1 & 2", icon: "🧪",
                         chapters: createChapters("lech1", [
                             "Solutions", "Electrochemistry", "Chemical Kinetics", 
@@ -388,7 +388,7 @@
                             "जूझ", "अतीत में दबा दाब", "डायरी के पन्ने"
                         ]))
                     },
-                    aaccountancy: {
+                    accountancy: {
                         code: "leac1", name: "Accountancy Part 1 & 2", icon: "📊",
                         chapters: createChapters("leac1", [
                             "Accounting for Partnership Firms - Basic Concepts", 
@@ -514,7 +514,7 @@
                             <nav className="hidden md:flex items-center space-x-1">
                                 <button 
                                     onClick={() => setCurrentView('home')} 
-                                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${currentView === 'home' ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
+                                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${currentView === 'home' ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
                                 >
                                     Home
                                 </button>
@@ -522,14 +522,21 @@
                                     <button
                                         key={clsKey}
                                         onClick={() => { setSelectedClass(clsKey); setCurrentView('class'); }}
-                                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${currentView === 'class' && selectedClass === clsKey ? 'bg-blue-600 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100'}`}
+                                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${currentView === 'class' && selectedClass === clsKey ? 'bg-blue-600 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100'}`}
                                     >
                                         {ncertDatabase[clsKey].name}
                                     </button>
                                 ))}
                                 <button 
+                                    onClick={() => setCurrentView('computer')} 
+                                    className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors cursor-pointer flex items-center gap-1.5 ${currentView === 'computer' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100'}`}
+                                >
+                                    <Icon name="laptop" className="w-4 h-4" />
+                                    Computer 2.0
+                                </button>
+                                <button 
                                     onClick={() => setCurrentView('disclaimer')} 
-                                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${currentView === 'disclaimer' ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
+                                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${currentView === 'disclaimer' ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
                                 >
                                     Disclaimer
                                 </button>
@@ -571,6 +578,12 @@
                                     {ncertDatabase[clsKey].name} Curriculum (All Subjects)
                                 </button>
                             ))}
+                            <button 
+                                onClick={() => { setCurrentView('computer'); setMobileMenuOpen(false); }}
+                                className="block w-full text-left px-3 py-2 rounded-lg text-base font-semibold bg-indigo-50 text-indigo-700 hover:bg-indigo-100"
+                            >
+                                💻 Computer 2.0 (Theory & Notes)
+                            </button>
                             <button 
                                 onClick={() => { setCurrentView('disclaimer'); setMobileMenuOpen(false); }}
                                 className="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700"
@@ -765,6 +778,186 @@
                             <Icon name="send" className="w-3.5 h-3.5 mr-1.5" />
                             Ask AI
                         </button>
+                    </div>
+                </div>
+            );
+        };
+
+        const ComputerPage = () => {
+            const [selectedChapter, setSelectedChapter] = useState('ch1');
+
+            const chapters = [
+                { id: 'ch1', title: 'Class 1: History of Computer & Hardware' },
+                { id: 'ch2', title: 'Class 2: Software & Operating System' },
+                { id: 'ch3', title: 'Class 3: MS-Office (Word, Excel, PPT)' },
+                { id: 'ch4', title: 'Class 4: Internet & E-Mail' },
+                { id: 'ch5', title: 'Class 5: Networking & Cyber Security' },
+            ];
+
+            return (
+                <div className="flex-1 bg-slate-50 py-8">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 mb-2">
+                                    <Icon name="terminal" className="w-3.5 h-3.5 mr-1.5" /> Computer Knowledge 2.0
+                                </span>
+                                <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">Computer Comprehensive Theory & Revision</h1>
+                                <p className="text-xs sm:text-sm text-slate-500 mt-1">For All Competitive & One-Day Examinations (CGL, CHSL, Police, CPO, State Exams)</p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                            {/* Left Sidebar: Chapters */}
+                            <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm h-fit space-y-1">
+                                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 py-2">Table of Chapters</h3>
+                                {chapters.map((ch) => (
+                                    <button
+                                        key={ch.id}
+                                        onClick={() => setSelectedChapter(ch.id)}
+                                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-colors cursor-pointer flex items-center justify-between ${
+                                            selectedChapter === ch.id 
+                                                ? 'bg-blue-600 text-white shadow-sm' 
+                                                : 'text-slate-700 hover:bg-slate-100'
+                                        }`}
+                                    >
+                                        <span>{ch.title}</span>
+                                        {selectedChapter === ch.id && <Icon name="chevron-right" className="w-4 h-4 text-white" />}
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* Right Content Area */}
+                            <div className="lg:col-span-3 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm text-slate-700 leading-relaxed text-sm">
+                                {selectedChapter === 'ch1' && (
+                                    <div className="space-y-6">
+                                        <div className="border-b border-slate-200 pb-4">
+                                            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Class - 1: History of Computer & Hardware</h2>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="text-lg font-bold text-blue-800 mb-2">Computer</h3>
+                                            <ol className="list-decimal pl-5 space-y-1">
+                                                <li>An electronic device that consists of hardware and software.[span_0](start_span)[span_0](end_span)</li>
+                                                <li>Hardware components describe the physical parts of the computer.[span_1](start_span)[span_1](end_span)</li>
+                                                <li>Software controls hardware and run the operating system, different programs and applications.[span_2](start_span)[span_2](end_span)</li>
+                                                <li>A computer system comprises a CPU, memory, input/output devices and storage devices.[span_3](start_span)[span_3](end_span)</li>
+                                            </ol>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="text-lg font-bold text-blue-800 mb-2">History</h3>
+                                            <ol className="list-decimal pl-5 space-y-1.5">
+                                                <li>It started with the birth of abacus, a wooden rack holding two horizontal wires with beads strung on them.[span_4](start_span)[span_4](end_span)</li>
+                                                <li>In 1642, first mechanical computer was developed by Blaise Pascal in 1642[span_5](start_span)[span_5](end_span)</li>
+                                                <li>In 1833, Charles Babbage conceived an automatic calculator or computer which is why he is called as the Father of computer.[span_6](start_span)[span_6](end_span)</li>
+                                                <li>In 1890, Punched cards (Tabulating machine) were used by Herman Hollerith and James Powers.[span_7](start_span)[span_7](end_span) These could read the information that had been punched into the cards automatically without human help.[span_8](start_span)[span_8](end_span)</li>
+                                                <li>Punch cards using computers (Turing machine) was created by IBM (International Business Machines).[span_9](start_span)[span_9](end_span) These were electromechanical devices.[span_10](start_span)[span_10](end_span) These could add, multiply and sort.[span_11](start_span)[span_11](end_span)</li>
+                                                <li>In 1945, ENIAC (Electronic Numerical Integrator and Computer), a high speed electronic computer was developed by John P. Eckert, John W. Mauchly and their associated at Moore school of Electrical Engineering of University.[span_12](start_span)[span_12](end_span) It was formally introduced in 1946.[span_13](start_span)[span_13](end_span) It occupied entire 30 by 30 feet room, was about 1000 times faster than previous computers and used 18,000 vacuum tubes.[span_14](start_span)[span_14](end_span)</li>
+                                                <li>In 1950, magnetic core memory and transistor circuit element of digital computers were used.[span_15](start_span)[span_15](end_span)</li>
+                                                <li>In 1980s, manufacturing of semi-conductor chips was done.[span_16](start_span)[span_16](end_span)</li>
+                                            </ol>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="text-lg font-bold text-blue-800 mb-2">Important Facts</h3>
+                                            <ul className="list-disc pl-5 space-y-1">
+                                                <li>First computer programme was developed by Lady Ada Augusta, a student of Babbage.[span_17](start_span)[span_17](end_span)</li>
+                                                <li>December 2 is observed as Computer Literacy Day.[span_18](start_span)[span_18](end_span)</li>
+                                                <li>First computer made in India was Siddharth, which was manufactured by Electronics Corporation of India.[span_19](start_span)[span_19](end_span)</li>
+                                                <li>First computer in India was installed in the Main Post Office in Bengaluru.[span_20](start_span)[span_20](end_span)</li>
+                                                <li>First super computer of the world is CDC 6600 released in 1964.[span_21](start_span)[span_21](end_span)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="text-lg font-bold text-blue-800 mb-3">Generations of Computer</h3>
+                                            <div className="overflow-x-auto">
+                                                <table className="w-full border-collapse border border-slate-200 text-xs sm:text-sm">
+                                                    <thead>
+                                                        <tr className="bg-slate-100 text-slate-800 text-left">
+                                                            <th className="border border-slate-200 p-2.5">Generation</th>
+                                                            <th className="border border-slate-200 p-2.5">Period</th>
+                                                            <th className="border border-slate-200 p-2.5">Main components</th>
+                                                            <th className="border border-slate-200 p-2.5">Examples</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr><td className="border border-slate-200 p-2">I</td><td className="border border-slate-200 p-2">1940-56</td><td className="border border-slate-200 p-2">Electronic valve / vacuum tube</td><td className="border border-slate-200 p-2">EDSAC, EDVAC, UNIVAC</td></tr>
+                                                        <tr className="bg-slate-50"><td className="border border-slate-200 p-2">II</td><td className="border border-slate-200 p-2">1957-63</td><td className="border border-slate-200 p-2">Transistor</td><td className="border border-slate-200 p-2">IBM-700, 1401, 1620, CDC-1604, 3600, ATLAS, ICL-1901</td></tr>
+                                                        <tr><td className="border border-slate-200 p-2">III</td><td className="border border-slate-200 p-2">1965-71</td><td className="border border-slate-200 p-2">Integrated circuit</td><td className="border border-slate-200 p-2">IBM-360, 370, NCR-395, CDC-1700, ICI-2903</td></tr>
+                                                        <tr className="bg-slate-50"><td className="border border-slate-200 p-2">IV</td><td className="border border-slate-200 p-2">1971-Present</td><td className="border border-slate-200 p-2">Large integrated circuit</td><td className="border border-slate-200 p-2">APPLE, DCM</td></tr>
+                                                        <tr><td className="border border-slate-200 p-2">V</td><td className="border border-slate-200 p-2">Present & Beyond</td><td className="border border-slate-200 p-2">Optical fibre, Artificial Intelligence</td><td className="border border-slate-200 p-2">Quantum computer, Supercomputers</td></tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="text-lg font-bold text-blue-800 mb-2">Types of Computer</h3>
+                                            <p className="font-semibold text-slate-800 mt-2 mb-1">On the basis of data handling capabilities:</p>
+                                            <ul className="list-disc pl-5 space-y-1 mb-3">
+                                                <li><strong>Analog Computer:</strong> These involve data that continually changes and does not have discrete values.[span_22](start_span)[span_22](end_span) Eg: Mercury thermometer, Speedometer[span_23](start_span)[span_23](end_span)</li>
+                                                <li><strong>Digital Computer:</strong> These accept the raw data as input, done in binary numbers (0 and 1).[span_24](start_span)[span_24](end_span) Eg: Laptop, Desktops, Smart phones etc.[span_25](start_span)[span_25](end_span)</li>
+                                                <li><strong>Hybrid Computers:</strong> These have features of both digital and analog computers.[span_26](start_span)[span_26](end_span) These can process both discrete and continuous data.[span_27](start_span)[span_27](end_span) Eg: processors used in petrol pumps (as they calculate both quantity and price).[span_28](start_span)[span_28](end_span)</li>
+                                            </ul>
+
+                                            <p className="font-semibold text-slate-800 mt-2 mb-1">On the basis of computing power and speed:</p>
+                                            <ul className="list-disc pl-5 space-y-1">
+                                                <li><strong>Personal Computer or Microcomputer:</strong> Based on microprocessor technology enabling manufacturers to put an entire CPU on a single chip.[span_29](start_span)[span_29](end_span) Eg: Laptop or notebook computer[span_30](start_span)[span_30](end_span)</li>
+                                                <li><strong>Workstation:</strong> Computer that is used explicitly for engineering applications like CAD/CAM, software development, desktop publishing.[span_31](start_span)[span_31](end_span)</li>
+                                                <li><strong>Mini Computer:</strong> Comparatively larger than micro computer; 5 to 50 times more power than micro computer.[span_32](start_span)[span_32](end_span)</li>
+                                                <li><strong>Mainframe Computer:</strong> More than 100 people can work at a time on different terminals by time sharing and multi tasking techniques.[span_33](start_span)[span_33](end_span)</li>
+                                                <li><strong>Super Computer:</strong> Very powerful, most expensive, fastest computers. Roger Cray developed the first supercomputer in 1976.[span_34](start_span)[span_34](end_span)</li>
+                                                <li><strong>Quantum Computer:</strong> Development of this type of computer is in final stage.[span_35](start_span)[span_35](end_span) In quantum computers, Q-Bit will be used in lieu of Binary Bits.[span_36](start_span)[span_36](end_span)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="text-lg font-bold text-blue-800 mb-2">Central Processing Unit (CPU) & Hardware</h3>
+                                            <p className="mb-2">Referred to as the brain of the computer.[span_37](start_span)[span_37](end_span) Given instructions and data through programs.[span_38](start_span)[span_38](end_span) The CPU then fetches program and data from memory, performs arithmetic and logic operations, and stores results back.[span_39](start_span)[span_39](end_span)</p>
+                                            <ul className="list-disc pl-5 space-y-1 mb-3">
+                                                <li><strong>ALU (Arithmetic and Logic Unit):</strong> Performs all arithmetic and logic operations as per instruction.[span_40](start_span)[span_40](end_span)</li>
+                                                <li><strong>Control Unit (CU):</strong> Controls sequential instruction execution, interprets instructions and guides data flow.[span_41](start_span)[span_41](end_span)</li>
+                                                <li><strong>Registers:</strong> High-speed storage locations holding data/instructions CPU is currently working on.[span_42](start_span)[span_42](end_span)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="text-lg font-bold text-blue-800 mb-2">Units of Memory</h3>
+                                            <div className="overflow-x-auto">
+                                                <table className="w-full border-collapse border border-slate-200 text-xs sm:text-sm">
+                                                    <thead>
+                                                        <tr className="bg-slate-100 text-left">
+                                                            <th className="border border-slate-200 p-2">Unit</th>
+                                                            <th className="border border-slate-200 p-2">Description</th>
+                                                            <th className="border border-slate-200 p-2">Unit</th>
+                                                            <th className="border border-slate-200 p-2">Description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr><td className="border border-slate-200 p-2 font-semibold">1 Nibble</td><td className="border border-slate-200 p-2">4 Bits</td><td className="border border-slate-200 p-2 font-semibold">1 Byte</td><td className="border border-slate-200 p-2">8 Bits</td></tr>
+                                                        <tr className="bg-slate-50"><td className="border border-slate-200 p-2 font-semibold">1 KB</td><td className="border border-slate-200 p-2">1024 Bytes</td><td className="border border-slate-200 p-2 font-semibold">1 MB</td><td className="border border-slate-200 p-2">1024 KB</td></tr>
+                                                        <tr><td className="border border-slate-200 p-2 font-semibold">1 GB</td><td className="border border-slate-200 p-2">1024 MB</td><td className="border border-slate-200 p-2 font-semibold">1 TB</td><td className="border border-slate-200 p-2">1024 GB</td></tr>
+                                                        <tr className="bg-slate-50"><td className="border border-slate-200 p-2 font-semibold">1 PB</td><td className="border border-slate-200 p-2">1024 TB</td><td className="border border-slate-200 p-2 font-semibold">1 EB</td><td className="border border-slate-200 p-2">1024 PB</td></tr>
+                                                        <tr><td className="border border-slate-200 p-2 font-semibold">1 ZB</td><td className="border border-slate-200 p-2">1024 EB</td><td className="border border-slate-200 p-2 font-semibold">1 YB</td><td className="border border-slate-200 p-2">1024 ZB</td></tr>
+                                                        <tr className="bg-slate-50"><td className="border border-slate-200 p-2 font-semibold">1 BB</td><td className="border border-slate-200 p-2">1024 YB</td><td className="border border-slate-200 p-2 font-semibold">1 Geop Byte</td><td className="border border-slate-200 p-2">1024 Bronto Byte</td></tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {selectedChapter !== 'ch1' && (
+                                    <div className="py-12 text-center text-slate-500">
+                                        <Icon name="file-text" className="w-12 h-12 mx-auto text-slate-300 mb-3" />
+                                        <h3 className="text-base font-bold text-slate-700">Content Coming Soon</h3>
+                                        <p className="text-xs text-slate-400 mt-1">अगला चैप्टर जल्द ही इसी सेक्शन में उपलब्ध करा दिया जाएगा।</p>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
             );
@@ -1008,7 +1201,6 @@
                             </div>
                         </div>
 
-                        {}
                         <div className="flex overflow-x-auto space-x-2 pb-4 mb-6 scrollbar-none">
                             {subjectKeys.map((subjKey) => {
                                 const subj = classData.subjects[subjKey];
@@ -1202,6 +1394,10 @@
 
                     {currentView === 'class' && (
                         <ClassView selectedClass={selectedClass} setSelectedClass={setSelectedClass} />
+                    )}
+
+                    {currentView === 'computer' && (
+                        <ComputerPage />
                     )}
 
                     {currentView === 'disclaimer' && (
